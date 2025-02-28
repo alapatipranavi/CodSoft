@@ -3,149 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaming Area</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #0d0d0d;
-            color: white;
-            text-align: center;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5px;
-            background: linear-gradient(90deg, #ff0000, #6600ff);
-            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .hero {
-            padding: 50px 20px;
-            background: url('images/background.webp') no-repeat center center/cover;
-            position: relative;
-        }
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-        .hero h2, .hero p, .hero .cta {
-            position: relative;
-            z-index: 2;
-        }
-        .cta {
-            display: inline-block;
-            padding: 12px 24px;
-            margin-top: 20px;
-            background: linear-gradient(90deg, #ff0000, #eeedf0);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
-            transition: 0.3s;
-        }
-        .cta:hover {
-            transform: scale(1.1);
-        }
-        .game-section {
-            padding: 20px 20px;
-            background: #1a1a1a;
-        }
-        .game-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .game-card {
-            background: #1a1a1a;
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            width: 200px;
-            height: 250px;
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            transition: transform 0.3s;
-        }
-        .game-card:hover {
-            transform: scale(1.1);
-        }
-        .game-card img {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-        }
-        footer {
-            padding: 10px;
-            background: linear-gradient(90deg, #6600ff, #ff0000);
-            color: white;
-        }
-    </style>
-
+    <title>Virtual Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Gaming Area</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#games">Games</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#sign up">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="home" class="hero">
-        <h2>Welcome to Gaming World!!</h2>
-        <p>Play the best games online for free!</p>
-        <a href="#games" class="btn">Explore Games</a>
-    </section>
-    <section id="game" class="game-section">
-        <h2>Popular Games</h2>
-        <div class="game-container">
-            <div class="game-card">
-            <img src="images/action battle.webp" alt="Game 1">
-                <h3>Action Battle</h3>
+    <div class="calculator">
+        <div class="screen">
+            <input type="text" id="display" disabled>
         </div>
-        <div class="game-card">
-            <img src="images/shooting.webp" alt="Game 2">
-            <h3>Shooting Game</h3>
+        <div class="buttons">
+            <div class="row">
+                <button class="button" onclick="appendValue('7')">7</button>
+                <button class="button" onclick="appendValue('8')">8</button>
+                <button class="button" onclick="appendValue('9')">9</button>
+                <button class="button operator" onclick="appendValue('/')">/</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="appendValue('4')">4</button>
+                <button class="button" onclick="appendValue('5')">5</button>
+                <button class="button" onclick="appendValue('6')">6</button>
+                <button class="button operator" onclick="appendValue('*')">*</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="appendValue('1')">1</button>
+                <button class="button" onclick="appendValue('2')">2</button>
+                <button class="button" onclick="appendValue('3')">3</button>
+                <button class="button operator" onclick="appendValue('-')">-</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="appendValue('0')">0</button>
+                <button class="button" onclick="appendValue('.')">.</button>
+                <button class="button" onclick="clearDisplay()">C</button>
+                <button class="button operator" onclick="appendValue('+')">+</button>
+            </div>
+            <div class="row">
+                <button class="button" onclick="backspace()">⌫</button>
+                <button class="button equal" onclick="calculate()">=</button>
+            </div>
         </div>
-        <div class="game-card">
-            <img src="images/adventure.webp" alt="Game 3">
-            <h3>Adventure Game</h3>
-        </div>
-        <div class="game-card">
-            <img src="images/fantasy.webp" alt="Game 4">
-            <h3>Fantacy Quest</h3>
-        </div>
-        </div>  
-        <footer>
-            <p>&copy; 2025 Gaming Area. All Rights Reserved.</p>
-        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+
