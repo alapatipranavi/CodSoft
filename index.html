@@ -1,210 +1,50 @@
-<html>
-    <body>
-       <head>
-        <title>Personal Portfolio</title>
-        <style>
-            body{
-                font-family: 'Poppins', sans-serif;
-                margin: 0;
-                padding: 0;
-                background: #f5f5f5;
-                color: #2c3e50;
-                text-align: center;
-            }
-            header{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 30px 10%;
-                background: #4a4e69;
-                color: whitesmoke;
-            }
-            nav ul{
-                display: flex;
-                list-style: none;
-                padding: 0;
-            }
-            nav ul li{
-                margin:0 15px;
-            }
-            nav ul li a{
-                text-decoration: none;
-                color: whitesmoke;
-                font-weight: bold;
-                transition: color 0.3s;
-            }
-            nav ul li a:hover{
-                color: #f39c12;
-            }
-            .hero{
-                height: 30vh;
-                background: linear-gradient(135deg,#6d6875,#b5838d);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: whitesmoke;
-                text-align: center;
-            }
-            .about-section {
-            padding: 50px 20px;
-            background: #c9ada7 !important;
-            align-items: center;
-            display: flex;
-            text-align: center;
-            flex-direction: column;
-        }
-            .about-content img{
-                border-radius: 80%;
-                width: 150px;
-                height: 150px;
-                flex-shrink: 0;
-                order:2;
-                
-            }
-            .about-content{
-                display: flex;
-                align-items: center;
-                gap: 40px;
-                justify-content: center;
-                text-align: left;
-                max-width: 800px;
-
-                flex-wrap: wrap;
-            }
-            .about-text{
-                text-align: left;
-                max-width: 600px;
-            }
-            
-            .skills-section, .resume, .certifications,.Other-Certifications, .contact{
-                padding: 20px 10px;
-                background: #c9ada7;
-            }
-            .skills div{
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            .skills div span{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                font-size: 18px;
-                font-weight: bold;
-            }
-            .skills-section img{
-                width: 50px !important;
-                height: 50px !important;
-                object-fit: contain;
-                display: inline-block;
-                vertical-align: middle;
-                
-            }
-            .contact-icons{
-                display: flex;
-                justify-content: center;
-                gap: 5px;
-                margin-top: 10px;
-            }
-            .contact-icons a img{
-                width: 40px;
-                height: 40px;
-                transition: transform 0.3s ease-in-out;
-                
-            }
-            .contact-icons a img:hover{
-                transform: scale(1.1);
-            }
-            .resume a{
-                display: inline-block;
-                padding: 5px 10px;
-                background: #4a4e69;
-                color: whitesmoke;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background 0.3s;
-                font-weight: bold;
-            }
-            .resume a:hover{
-                background: #6d6875;
-            }
-            footer{
-                padding: 10px;
-                background: #4a4e69;
-                color: whitesmoke;
-            }
-        </style>
-       </head> 
-        <header>
-            <h1>My Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a hreaf="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#Other-Certifications">Other Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section id="home" class="hero">
-            <h1>Welcome to my portfolio🚀</h1>
-        </section>
-        <section id="about" class="about-section">
-            <h2>About Me 👨‍💻</h2>
-            <div class="about-content">
-                <div class="about-text">
-            <p>Hi,I'm Alapati Chiru Sri Pranavi. I am a passionate and creative tech enthusiast, currently pursuing my B.Tech 2nd year in the Computer
-                Science and Technology Department at Sasi Institue Of Technology And Engineering. I have a deep interest in building innovative web solutions 
-                and exploring emerging technologies. Always eager to learn and push boundaries, I strive to create impactful didgital experiences. With an entrepreneurial mindset, I aim to develop
-                solutions that make a lasting impact in the tech world.    
-            </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen">
+            <input type="text" id="display" disabled>
+        </div>
+        <div class="buttons">
+            <div class="row">
+                <button class="button" onclick="appendValue('7')">7</button>
+                <button class="button" onclick="appendValue('8')">8</button>
+                <button class="button" onclick="appendValue('9')">9</button>
+                <button class="button operator" onclick="appendValue('/')">/</button>
             </div>
-            <img src="image/logo.webp" alt="Profile Picture">
+            <div class="row">
+                <button class="button" onclick="appendValue('4')">4</button>
+                <button class="button" onclick="appendValue('5')">5</button>
+                <button class="button" onclick="appendValue('6')">6</button>
+                <button class="button operator" onclick="appendValue('*')">*</button>
             </div>
-        </section>
-        <section id="skills" class="skills-section">
-            <h2>Skills 🛠</h2>
-            <div>
-                <span><img src="image/html.webp" alt="html">HTML</span>
-                <span><img src="image/css.webp" alt="css">CSS</span>
-                <span><img src="image/python.png" alt="python">Python</span>
-                <span><img src="image/java.jpg" alt="java">JAVA</span>
+            <div class="row">
+                <button class="button" onclick="appendValue('1')">1</button>
+                <button class="button" onclick="appendValue('2')">2</button>
+                <button class="button" onclick="appendValue('3')">3</button>
+                <button class="button operator" onclick="appendValue('-')">-</button>
             </div>
-        </section>
-        <section id="resume" class="resume">
-            <h2>Resume 📜</h2>
-            <p><a href="https://www.canva.com/design/DAGeVynskMo/9xTT32pDtS9zHvzvrFSRiQ/view?utm_content=DAGeVynskMo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h947ab364d9" download>Resume</a></p>
-        </section>
-        <section id="certifications" class="certifications">
-            <h2>Certifications 🏅</h2>
-            <p>Learn HTML/CSS certificate from CodeChef</p>
-            <p>Learn Python certificate from CodeChef</p>
-            <p>Practice Python certificate from CodeChef</p>
-            <p>500 Difficulty Rating from CodeChef</p>
-            <p>Learn JavaScript from CodeChef</p>
-        </section>
-        <section id="Other-Certifications" class="Other-Certifications">
-            <h2>Other Certifications 🏆</h2>
-            <p>Achieved Kuchipudi Dnace Certificate from Guinness World Record by SiliconAndhra</p>
-            <p>Achieved 3rd place at the district level in Kuchipudi Dance Competetion</p>
-            <p></p>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact Me📞</h2>
-            <p>Phone 📱: 7032634899</p>
-            <p>Email 📧: alapatipranavi@gmail.com></p>
-            <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/pranavi-alapati-18138a346/"><img src="image/linkedin.jpg" alt="LinkedIn" width="40"></a></p>
-            <a href="https://github.com/alapatipranavi"><img src="image/github.png" alt="GitHub" width="40"></a></p>
-            <a href="https://www.instagram.com/_pranavi_08/"><img src="image/insta.png" alt="instagram" width="40"></a></p>
+            <div class="row">
+                <button class="button" onclick="appendValue('0')">0</button>
+                <button class="button" onclick="appendValue('.')">.</button>
+                <button class="button" onclick="clearDisplay()">C</button>
+                <button class="button operator" onclick="appendValue('+')">+</button>
             </div>
-        </section>
-        <footer>
-            <p>&copy; 2025 Alapati Chiru Sri Pranavi</p>
-        </footer>
-
-    </body>
+            <div class="row">
+                <button class="button" onclick="backspace()">⌫</button>
+                <button class="button equal" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
+
+
+
