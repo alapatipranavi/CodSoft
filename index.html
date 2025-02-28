@@ -1,210 +1,151 @@
-<html>
-    <body>
-       <head>
-        <title>Personal Portfolio</title>
-        <style>
-            body{
-                font-family: 'Poppins', sans-serif;
-                margin: 0;
-                padding: 0;
-                background: #f5f5f5;
-                color: #2c3e50;
-                text-align: center;
-            }
-            header{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 30px 10%;
-                background: #4a4e69;
-                color: whitesmoke;
-            }
-            nav ul{
-                display: flex;
-                list-style: none;
-                padding: 0;
-            }
-            nav ul li{
-                margin:0 15px;
-            }
-            nav ul li a{
-                text-decoration: none;
-                color: whitesmoke;
-                font-weight: bold;
-                transition: color 0.3s;
-            }
-            nav ul li a:hover{
-                color: #f39c12;
-            }
-            .hero{
-                height: 30vh;
-                background: linear-gradient(135deg,#6d6875,#b5838d);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: whitesmoke;
-                text-align: center;
-            }
-            .about-section {
-            padding: 50px 20px;
-            background: #c9ada7 !important;
-            align-items: center;
-            display: flex;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Area</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #0d0d0d;
+            color: white;
             text-align: center;
-            flex-direction: column;
         }
-            .about-content img{
-                border-radius: 80%;
-                width: 150px;
-                height: 150px;
-                flex-shrink: 0;
-                order:2;
-                
-            }
-            .about-content{
-                display: flex;
-                align-items: center;
-                gap: 40px;
-                justify-content: center;
-                text-align: left;
-                max-width: 800px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background: linear-gradient(90deg, #ff0000, #6600ff);
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            padding: 50px 20px;
+            background: url('images/background.webp') no-repeat center center/cover;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero h2, .hero p, .hero .cta {
+            position: relative;
+            z-index: 2;
+        }
+        .cta {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background: linear-gradient(90deg, #ff0000, #eeedf0);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+        .cta:hover {
+            transform: scale(1.1);
+        }
+        .game-section {
+            padding: 20px 20px;
+            background: #1a1a1a;
+        }
+        .game-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .game-card {
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            height: 250px;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.3s;
+        }
+        .game-card:hover {
+            transform: scale(1.1);
+        }
+        .game-card img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+        footer {
+            padding: 10px;
+            background: linear-gradient(90deg, #6600ff, #ff0000);
+            color: white;
+        }
+    </style>
 
-                flex-wrap: wrap;
-            }
-            .about-text{
-                text-align: left;
-                max-width: 600px;
-            }
-            
-            .skills-section, .resume, .certifications,.Other-Certifications, .contact{
-                padding: 20px 10px;
-                background: #c9ada7;
-            }
-            .skills div{
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: wrap;
-            }
-            .skills div span{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                font-size: 18px;
-                font-weight: bold;
-            }
-            .skills-section img{
-                width: 50px !important;
-                height: 50px !important;
-                object-fit: contain;
-                display: inline-block;
-                vertical-align: middle;
-                
-            }
-            .contact-icons{
-                display: flex;
-                justify-content: center;
-                gap: 5px;
-                margin-top: 10px;
-            }
-            .contact-icons a img{
-                width: 40px;
-                height: 40px;
-                transition: transform 0.3s ease-in-out;
-                
-            }
-            .contact-icons a img:hover{
-                transform: scale(1.1);
-            }
-            .resume a{
-                display: inline-block;
-                padding: 5px 10px;
-                background: #4a4e69;
-                color: whitesmoke;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: background 0.3s;
-                font-weight: bold;
-            }
-            .resume a:hover{
-                background: #6d6875;
-            }
-            footer{
-                padding: 10px;
-                background: #4a4e69;
-                color: whitesmoke;
-            }
-        </style>
-       </head> 
-        <header>
-            <h1>My Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a hreaf="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#Other-Certifications">Other Certifications</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section id="home" class="hero">
-            <h1>Welcome to my portfolio🚀</h1>
-        </section>
-        <section id="about" class="about-section">
-            <h2>About Me 👨‍💻</h2>
-            <div class="about-content">
-                <div class="about-text">
-            <p>Hi,I'm Alapati Chiru Sri Pranavi. I am a passionate and creative tech enthusiast, currently pursuing my B.Tech 2nd year in the Computer
-                Science and Technology Department at Sasi Institue Of Technology And Engineering. I have a deep interest in building innovative web solutions 
-                and exploring emerging technologies. Always eager to learn and push boundaries, I strive to create impactful didgital experiences. With an entrepreneurial mindset, I aim to develop
-                solutions that make a lasting impact in the tech world.    
-            </p>
-            </div>
-            <img src="image/logo.webp" alt="Profile Picture">
-            </div>
-        </section>
-        <section id="skills" class="skills-section">
-            <h2>Skills 🛠</h2>
-            <div>
-                <span><img src="image/html.webp" alt="html">HTML</span>
-                <span><img src="image/css.webp" alt="css">CSS</span>
-                <span><img src="image/python.png" alt="python">Python</span>
-                <span><img src="image/java.jpg" alt="java">JAVA</span>
-            </div>
-        </section>
-        <section id="resume" class="resume">
-            <h2>Resume 📜</h2>
-            <p><a href="https://www.canva.com/design/DAGeVynskMo/9xTT32pDtS9zHvzvrFSRiQ/view?utm_content=DAGeVynskMo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h947ab364d9" download>Resume</a></p>
-        </section>
-        <section id="certifications" class="certifications">
-            <h2>Certifications 🏅</h2>
-            <p>Learn HTML/CSS certificate from CodeChef</p>
-            <p>Learn Python certificate from CodeChef</p>
-            <p>Practice Python certificate from CodeChef</p>
-            <p>500 Difficulty Rating from CodeChef</p>
-            <p>Learn JavaScript from CodeChef</p>
-        </section>
-        <section id="Other-Certifications" class="Other-Certifications">
-            <h2>Other Certifications 🏆</h2>
-            <p>Achieved Kuchipudi Dnace Certificate from Guinness World Record by SiliconAndhra</p>
-            <p>Achieved 3rd place at the district level in Kuchipudi Dance Competetion</p>
-            <p></p>
-        </section>
-        <section id="contact" class="contact">
-            <h2>Contact Me📞</h2>
-            <p>Phone 📱: 7032634899</p>
-            <p>Email 📧: alapatipranavi@gmail.com></p>
-            <div class="contact-icons">
-            <a href="https://www.linkedin.com/in/pranavi-alapati-18138a346/"><img src="image/linkedin.jpg" alt="LinkedIn" width="40"></a></p>
-            <a href="https://github.com/alapatipranavi"><img src="image/github.png" alt="GitHub" width="40"></a></p>
-            <a href="https://www.instagram.com/_pranavi_08/"><img src="image/insta.png" alt="instagram" width="40"></a></p>
-            </div>
-        </section>
+</head>
+<body>
+    <header>
+        <h1>Gaming Area</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#sign up">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <h2>Welcome to Gaming World!!</h2>
+        <p>Play the best games online for free!</p>
+        <a href="#games" class="btn">Explore Games</a>
+    </section>
+    <section id="game" class="game-section">
+        <h2>Popular Games</h2>
+        <div class="game-container">
+            <div class="game-card">
+            <img src="images/action battle.webp" alt="Game 1">
+                <h3>Action Battle</h3>
+        </div>
+        <div class="game-card">
+            <img src="images/shooting.webp" alt="Game 2">
+            <h3>Shooting Game</h3>
+        </div>
+        <div class="game-card">
+            <img src="images/adventure.webp" alt="Game 3">
+            <h3>Adventure Game</h3>
+        </div>
+        <div class="game-card">
+            <img src="images/fantasy.webp" alt="Game 4">
+            <h3>Fantacy Quest</h3>
+        </div>
+        </div>  
         <footer>
-            <p>&copy; 2025 Alapati Chiru Sri Pranavi</p>
+            <p>&copy; 2025 Gaming Area. All Rights Reserved.</p>
         </footer>
-
-    </body>
+</body>
 </html>
